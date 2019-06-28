@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function principal(){
+            var vet = [];
+            criaVetores(vet);
+            alert(vet)
+
+        }
+
+        function criaVetores(pvet){
+            var objeto = new Object();
+                objeto.nome = prompt("Digite um nome");
+                objeto.idade = parseInt(prompt("Digite uma idade"));
+                objeto.sexo = prompt("Digite o sexo");
+                pvet.push(objeto);
+                console.log(pvet);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="principal()">Calcular</button>
+</body>
+</html>
