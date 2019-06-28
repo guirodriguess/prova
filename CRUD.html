@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CRUD</title>
+	<script>
+		vet = [];
+		function cadastro(){
+			nome = document.getElementById("nome").value;
+			vet.push(nome);
+			document.getElementById("cadastro").innerHTML = "Cadastrado com sucesso"
+		}
+
+		function consulta(){
+			var i;
+			var cons = "";
+			for(i=0; i <vet.length; i++){
+				cons += vet[i] + "<br/>";
+			}
+			document.getElementById("consulta").innerHTML = cons;
+		}
+
+		function remover(){
+			nome = document.getElementById("removerUsuario").value;
+			posicao = vet.indexOf(nome);
+			if (posicao == -1){
+				document.getElementById("remover").innerHTML = "Usuário não existe"
+			} else{
+				vet.splice(posicao, 1);
+				document.getElementById("remover").innerHTML = "Removido com sucesso"
+			}
+		}
+
+		function atualiza(){
+			nome = document.getElementById("nomeAtualiza").value;
+			novo = document.getElementById("nomeNovo").value;
+			posicao = vet.indexOf(nome);
+			if (posicao == -1) {
+				document.getElementById("atualiza").innerHTML = "Nome não existe";
+			}else{
+				vet[posicao] = novo;
+				document.getElementById("atualiza").innerHTML = "Atualizado com sucesso";
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>
+		Cadastrar Usuário <input type="text" id="nome">
+	</p>
+	<p>
+		<button onclick="cadastro()">Cadastrar</button>
+	</p>
+	<p id="cadastro">
+	<p>
+		<button onclick="consulta()">Consultar</button>
+	</p>
+	<p id="consulta">
+	<p> Remover Usuário <input type="text" id="removerUsuario">
+	<p>
+		<button onclick="remover()">Remover</button>
+	</p>
+	<p id="remover">
+	<p>
+		Digite nome
+		<input type ="text" id="nomeAtualiza">
+		Atualizar nome
+		<input type ="text" id="nomeNovo">
+	</p>
+	<p>
+		<button onclick="atualiza()">Atualizar</button>
+	</p>
+	<p id="atualiza">
+</body>
+</html>
