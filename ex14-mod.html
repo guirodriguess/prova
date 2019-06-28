@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function principal(){
+            var X = [];
+            for(var i = 0; i < 5; i++){  
+                X.push(parseInt(prompt("Digite um número: ")));
+            } 
+            var A = []; 
+            var B = [];
+            criaVetores(X, A, B);
+            alert(A);
+            alert(B);
+        }
+
+        function criaVetores(pX, pA, pB){
+            for(i=0;i<pX.length;i++){
+                if (pX[i] % 2 == 0){
+                    pA.push(pX[i])
+                }
+                else {
+                    pB.push(pX[i])
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="principal()">Calcular</button>
+</body>
+</html>
